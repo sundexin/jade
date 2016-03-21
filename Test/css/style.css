@@ -1,0 +1,113 @@
+body,
+div,
+label,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+p,
+blockquote,
+th,
+td {
+  list-style: none;
+  margin: 0;
+}
+body padding 0,
+div padding 0,
+label padding 0,
+dl padding 0,
+dt padding 0,
+dd padding 0,
+ul padding 0,
+ol padding 0,
+li padding 0,
+h1 padding 0,
+h2 padding 0,
+h3 padding 0,
+h4 padding 0,
+h5 padding 0,
+h6 padding 0,
+pre padding 0,
+code padding 0,
+form padding 0,
+fieldset padding 0,
+legend padding 0,
+p padding 0,
+blockquote padding 0,
+th padding 0,
+td padding 0 {
+  border: none;
+  outline: 0 none;
+}
+body {
+  font-family: 'Microsoft Yahei', '宋体', sunsun, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 22px;
+  color: #666;
+  background: #fff;
+}
+img {
+  border: none;
+}
+.top {
+  padding: 10px;
+  background: #f60;
+  line-height: 50px;
+  text-align: center;
+  font-size: 40px;
+}
+.nav {
+  margin: 20px 0;
+  border: 1px solid #900;
+  overflow: hidden;
+}
+.nav ul li {
+  float: left;
+  width: 50px;
+  text-align: center;
+}
+.nav ul li a {
+  color: #f00;
+}
+.nav ul li a:hover {
+  color: #00f;
+}
+#wrap {
+  width: 960px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#wrap .left {
+  width: 200px;
+  background: #f2f2f2;
+  float: left;
+  overflow: hidden;
+}
+#wrap .right {
+  float: left;
+  width: 750px;
+  margin-left: 10px;
+  background: #f4f4f4;
+}
+.t1,
+.t2 {
+  font-size: 30px;
+  padding-left: 10px;
+}
+.t2 {
+  color: #f00;
+}

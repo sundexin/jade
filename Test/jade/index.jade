@@ -1,0 +1,155 @@
+doctype html
+html
+  head
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="description" content="stylus项目参考文档中文版之CSS样式解析(CSS Style Syntax) » 张鑫旭-鑫空间-鑫生活" />
+    <meta name="description" content="stylus中文版参考文档 CSS样式解析(CSS Style Syntax)" />
+    <meta name="keywords" content="css, nodejs, stylus" />
+    <meta name="author" content="张鑫旭, zhangxixnu" />
+    link(rel="stylesheet"  type="text/css" href="../css/style.css" )
+  body
+
+
+
+    div
+      a.link( href="baidu.com" ) 链接到百度
+      | 这是一1
+      div
+        | 个链接
+    #bb 这是另一个文本
+    .top 这是标题
+    .nav(title="这是导航")
+
+      ul
+          - var arr=['首页','服装城','夺宝岛','团购']
+          each val in arr
+            li= val
+              a(href="#") 我的
+      ul
+          //- aaa = ["1","2","3"]
+          - for ( var j= 0; j < 10; j++ )
+            li= j
+     ul
+      li
+        a.link(class="", href="baidu.com") 首页
+      li
+        a(class="", href="baidu.com") 首页
+      li
+        a(class="", href="baidu.com") 首页
+      ul
+        - var text = ['姓 名：', '手 机：', '邮 箱：', '公 司：', '职 位：']
+        each val in text
+          li
+            label
+              span  *
+              | #{val}
+            input(type="text" name="" )
+      #br 这是一个隔开行
+      ul
+        //- var text = ['姓 名：', '手 机：', '邮 箱：', '公 司：', '职 位：']
+        - var test = {'radio': '姓 名：', 'checkbox': '手 机：', 'text': '邮 箱：'}
+        each val, index in test
+          li
+            label
+              span  *
+              | #{val}
+            input(type=index name="input" )
+
+      - var arr=['TCL SDK','TCL 开发文档','TCL 相关SDK','其他相关']
+        each val in arr
+          li
+           a(href="#" class= index == 0 ? "on" : "")= val
+
+    #wrap(title="这里是内容")
+        //
+          内容开始
+        .left 这里是左侧内容
+          span.box
+            a.link(href="qq.com")腾讯链接
+          include left.jade
+        .right 这里是右侧内容
+          include right.jade
+          block div
+        //
+          内容结束
+    .t1 继承
+    .t2 继承属性
+
+    - var classes=["a","b","c"]
+      a(class=classes,href="#") 测试链接1
+      a.bing(class=classes,class=[bing],href="#") 测试链接2
+
+    div.div(style="margin:20px 0") 定义距离
+    ul
+      // - var arr  直接A链接
+      each val in ["1","2","3"]
+        li
+          a(href="#")= val
+
+    div.div(style="margin:20px 0") 定义距离
+
+    ul
+      - var arr=["第一r","第二","第三"]
+      each index , val in arr
+        li=index
+          a( href="#" ) #{val}
+
+     div.div(style="margin:20px 0") 定义距离
+
+    - var friends = 10
+    case friends
+      when 0
+        p You are have 0 friends
+      when 10
+        p You are have 10 friends
+      default
+        p You are have #{friends} friends
+    div.div(style="margin:20px 0") 定义距离
+    //- Declaration
+    mixin list
+      ul
+        - var arr=["foo","bar","baz"]
+        each val in arr
+          li= val
+    //- Use
+    +list()
+    +list()
+    div.div(style="margin:20px 0") 定义距离
+    ul
+      - var arr={'第一':'11','第二':'22','第三':'33'}
+      each val , index in arr
+        li=index
+          a( href="#" ) #{val}
+       ul
+        - var arr = ['回复','收藏','删除','转发']
+        - var arrClass =["c11","c2","c3","c4"]
+        //- each val,i in arr
+        - for(var i=0;i<arr.length;i++)
+          //li(class=arrClass[i])= val
+          li(class=arrClass[i])= arr[i]
+
+      - for ( var i = 0; i < 5; i++ )
+      li( class= ( i == 4 ) ? 'last': '' )
+
+
+ul.nav.navbar-nav
+  - var lis = ['首页', 'CSDN主办', '业界活动', 'CTO俱乐部', 'TUP', '社区', '我的活动']
+  each val, index in lis
+    if index == lis.length-1
+      li( class= index == active ? 'active last' : 'last' )
+        a( href="#" )= val
+    else
+      li( class= index == active ? 'active' : '' )
+        a( href="#" )= val
+          case i
+            when 0
+              td 未开始
+            when 1
+              td.lesson-progress 1分15秒
+            when 2
+              td.lesson-close 已完成
+          td
+            if i == 2
+              a( href="#" ) 再次学习
+            else
+              a( href="#" ) 继续学习

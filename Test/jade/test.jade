@@ -1,0 +1,48 @@
+doctype html
+
+html
+head
+  title Jade学习
+  link(rel="stylesheet"  type="text/css" href="../css/test.css" )
+  block css
+
+body
+  .mess qqweqwe
+  .div 这里提什么
+  p.aaa.bbbb#dfdf( attr="xxxx" )
+    span dfdf
+      | 8888
+    | xxxxx
+    a.link( href="xxx" ) dsfadsfas111111
+
+  #bb
+    a.alink 连接
+
+  - var arr = ['1', '22222', '3']
+  each val in arr
+    li= val
+
+  - for ( var i = 0; i < 3; i++ )
+    li= arr[i]
+
+  table
+    tr
+      td aaaaaaaaaaaaaaaa
+
+  //- include test/a.jade
+  include left.jade
+  block div
+
+
+
+  .main
+    .left
+      //include aa/bb.jade
+
+    .right
+      block right
+
+
+  block scripts
+
+
